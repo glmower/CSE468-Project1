@@ -1,0 +1,22 @@
+# this file should be renamed 01-netcfg.yaml in your VM
+# enter the following, substituting X, Y, and Z
+# with your Gateway, Client, and Server interfaces, respectively
+
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp0sY:
+      dhcp4: no
+      addresses: [192.168.0.100/24]
+      nameservers:
+        addresses: [8.8.8.8, 8.8.4.4]
+    enp0sZ:
+      dhcp4: no
+      addresses: [10.0.0.100/8]
+      nameservers:
+      addresses: [8.8.8.8, 8.8.4.4]
+    enp0sX:
+      dhcp4: yes
+      nameservers:
+        addresses: [8.8.8.8, 8.8.4.4]
